@@ -1,9 +1,5 @@
-# React TypeScript Starter Pack
+A project for to-dos in which you can write down your to-dos in which you can add, complete, rename to-dos
 
-To use this template click `Use this template`
+Technologies such as HTML BEM React JavaSript SASS were used in development
 
-### Available Scripts
-
-`Deploy` - available to deploy your application to gh-pages
-
-`SCSS Preprocessor` - available to write your styles with modern style language
+[link to the finished project](https://ilia991.github.io/todo-app/)
