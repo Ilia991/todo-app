@@ -11,9 +11,9 @@ import { TodoItem } from './components/TodoItem/TodoItem';
 
 enum ErorrType {
   NONE,
-  ADDERORR,
-  DELETEERORR,
-  UPDATEERORR,
+  ADD_ERROR,
+  DELETE_ERROR,
+  UPDATE_ERROR,
 }
 
 enum Filter {
@@ -92,7 +92,7 @@ export const Todos: React.FC<TodosProps> = ({ user }) => {
         setIsDisabled(false);
       });
     } else {
-      setErorr(ErorrType.ADDERORR);
+      setErorr(ErorrType.ADD_ERROR);
     }
 
     setTitle('');
@@ -153,7 +153,7 @@ export const Todos: React.FC<TodosProps> = ({ user }) => {
     const timer = setTimeout(() => {
       getTodos(user.id)
         .then(allTodos => setTodos(allTodos))
-        .catch(() => setErorr(ErorrType.UPDATEERORR));
+        .catch(() => setErorr(ErorrType.UPDATE_ERROR));
       clearTimeout(timer);
     }, 100);
   }, []);
@@ -271,13 +271,13 @@ export const Todos: React.FC<TodosProps> = ({ user }) => {
           className="delete"
           onClick={() => clearErorr()}
         />
-        {erorr === ErorrType.ADDERORR && (
+        {erorr === ErorrType.ADD_ERROR && (
           <div>Unable to add a todo</div>
         )}
-        {erorr === ErorrType.DELETEERORR && (
+        {erorr === ErorrType.DELETE_ERROR && (
           <div>Unable to delete a todo</div>
         )}
-        {erorr === ErorrType.UPDATEERORR && (
+        {erorr === ErorrType.UPDATE_ERROR && (
           <div>Unable to update a todo</div>
         )}
       </div>

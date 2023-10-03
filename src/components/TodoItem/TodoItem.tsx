@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { Todo } from '../../types/Todo';
 import '../../styles/todoItem.scss';
@@ -48,8 +48,9 @@ export const TodoItem: React.FC<TodoItemProps> = ({
       className={classNames('todo', { completed: todo.completed })}
       key={todo.id}
     >
-      <label className="todo__status-label">
+      <label className="todo__status-label" htmlFor="checkbox">
         <input
+          id="checkbox"
           type="checkbox"
           className="todo__status"
           checked={todo.completed}
